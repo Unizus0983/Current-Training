@@ -16,9 +16,10 @@
 
 <body>
 
-  <section class="first section">
+  <section class=" section">
+    <h1>les tableaux</h1>
     <div class="first-table">
-      <h1>Tableau simple</h1>
+      <h2>Tableau simple</h2>
       <span> Rappels </span>
       <table>
         <caption class="title">Front-end developper</caption>
@@ -55,10 +56,10 @@
       </table>
     </div>
     <div class="second-table">
-      <h1>Tableau élaboré</h1>
+      <h2>Tableau colspan</h2>
       <span> Rappels </span>
       <table>
-        <caption class="title">Front-end developper</caption>
+        <caption class="title">Tous nos articles</caption>
         <thead>
           <tr>
             <th>article </th>
@@ -95,7 +96,42 @@
         </tbody>
       </table>
     </div>
+    <div class="third-table">
+      <h2>Tableau ROWSPAN</h2>
+      <span> Rappels </span>
+      <table>
+        <caption class="title">Nos évènements</caption>
+        <thead>
+          <tr>
+            <th>évènements </th>
+            <th>dates prévues</th>
+            <th>lieux</th>
+            <th>participation</th>
+          </tr>
 
+        </thead>
+        <tbody>
+          <tr>
+            <th>Soirée tarot</th>
+            <td rowspan="3">22/12/2025</td>
+            <td>Amiens</td>
+            <td>10 €</td>
+          </tr>
+          <tr>
+            <th>Soirée pocker</th>
+            <td>Arras</td>
+            <td>5 €</td>
+          </tr>
+          <tr>
+            <th>Belote</th>
+
+            <td>Lens</td>
+            <td>8 €</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
 
   </section>
 
