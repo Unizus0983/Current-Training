@@ -10,18 +10,21 @@
 
 @font-face {
   font-family: 'OpenSans';
-  src: url(../fonts/OpenSans-VariableFont_wdth\wght.ttf);
+  src: url(../fonts/opensans-regular.ttf);
 }
 @font-face {
   font-family: 'Monserrat';
-  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+  src: url(../fonts/montserrat-variable.ttf);
 }
 /* *******reset******* */
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+}
+body {
+  font-family: 'montserrat', sans-serif;
 }
 header {
   background: linear-gradient(
@@ -57,7 +60,7 @@ header p {
   height: 2px;
   width: 100%;
   background: var(--big-title);
-  top: 42px;
+  top: 48px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -82,7 +85,7 @@ header p {
   flex-direction: column;
   justify-content: left;
   gap: 10px;
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 .card-title p {
   color: var(--grey);
@@ -109,7 +112,7 @@ header p {
   background: var(--bg-color-section);
   padding: 20px 20px;
   box-shadow: 0px 1px 5px 1px rgba(195, 195, 195, 0.415);
-  width: 800px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -120,7 +123,8 @@ header p {
   align-items: center;
   gap: 20px;
   padding: 0 20px;
-  width: 900;
+
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -138,6 +142,12 @@ header p {
   font-size: 0.9rem;
   font-weight: 600;
   padding-bottom: 10px;
+}
+.card-fonts h5 {
+  font-size: 0.8rem;
+}
+.card-fonts {
+  line-height: 1.4;
 }
 
 .poppins p {
@@ -191,26 +201,35 @@ header p {
   width: 100%;
   margin: 0 auto;
 }
+#list h5 {
+  display: inline-block;
+}
+#list p {
+  font-size: 0.7rem;
+}
+
 #list ol {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   list-style-position: inside;
   width: 100%;
 }
-#list ol li {
+#list li {
   background: var(--bg-color-card);
 
   width: 100%;
-
+  box-shadow: 1px 1px 1px rgba(195, 195, 195, 0.415);
   padding: 15px 10px;
 }
-#list h5 {
-  display: inline-block;
+#list li:first-child {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-@media only screen and (min-width: 830px) {
+@media only screen and (min-width: 900px) {
   .card-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -218,7 +237,7 @@ header p {
   }
 
   .card-fonts {
-    width: 26.33%;
-    height: 170px;
+    width: 27.6%;
+    height: 190px;
   }
 }
