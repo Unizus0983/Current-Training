@@ -1,19 +1,224 @@
+:root {
+  --big-title: #f2f2f2;
+  --blue-title: #3f8efc;
+  --grey: #828282;
+  --bg-color-section: rgba(182, 203, 243, 0.2);
+  --bg-color-card: #fff;
+  --black1: #3d3d3d;
+  --black2: #0d0d0d;
+}
+
 @font-face {
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'OpenSans';
   src: url(../fonts/OpenSans-VariableFont_wdth\wght.ttf);
 }
 @font-face {
-  font-family: 'Monserrat', sans-serif;
+  font-family: 'Monserrat';
   src: url(../fonts/Montserrat-VariableFont_wght.ttf);
 }
-@font-face {
-  font-family: 'Poppins', sans-serif;
-  src: url(../fonts/Poppins-ExtraLight.ttf), url(../fonts/Poppins-Light.ttf);
-}
-
+/* *******reset******* */
 *,
 *:after,
 *:before {
   margin: 0;
   padding: 0;
+}
+header {
+  background: linear-gradient(
+    90deg,
+    rgba(249, 172, 32, 1) 42%,
+    rgba(236, 125, 16, 1) 70%
+  );
+  color: var(--big-title);
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-title {
+  text-transform: capitalize;
+}
+header p {
+  margin-top: 10px;
+}
+#line {
+  display: inline-block;
+  position: relative;
+}
+#line::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--big-title);
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* **************main************* */
+.container {
+  max-width: 1100px;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+.container > * {
+  margin-bottom: 30px;
+}
+
+/* *********div fonts ****** */
+.fonts {
+  background: var(--bg-color);
+  padding: 0 20px;
+}
+.card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 10px;
+  padding: 20px 0;
+}
+.card-title p {
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+.blue-title {
+  color: var(--blue-title);
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.blue-title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: 5px;
+  background: var(--blue-title);
+}
+
+/* ******card container****** */
+.fonts {
+  background: var(--bg-color-section);
+  padding: 20px 20px;
+  box-shadow: 0px 1px 5px 1px rgba(195, 195, 195, 0.415);
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  width: 900;
+  margin: 0 auto;
+}
+
+.card-fonts {
+  background: var(--bg-color-card);
+  padding: 15px;
+  color: var(--black1);
+  box-shadow: 1px 1px 1px rgba(195, 195, 195, 0.415);
+  height: 90px;
+  width: 100%;
+}
+.card-fonts h4,
+.card-fonts h5 {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.poppins p {
+  font-size: 0.6rem;
+
+  color: var(--black2);
+}
+#mixte p {
+  font-size: 0.75rem;
+}
+
+/* *****font-family p0pins***** */
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.poppins.light p {
+  font-weight: 200;
+}
+.poppins.regular p {
+  font-weight: 400;
+}
+.poppins.bold p,
+.montserrat.bold p {
+  font-weight: 600;
+}
+.poppins.italic p {
+  font-style: italic;
+  font-weight: 300;
+}
+/* *****font-family opensans***** */
+.opensans {
+  font-family: 'OpenSans', sans-serif;
+}
+
+.opensans.regular p,
+.montserrat.regular p {
+  font-weight: 400;
+}
+.opensans.bold p {
+  font-weight: 700;
+}
+/* ************section liste********** */
+.card-fonts#list {
+  background: none;
+  box-shadow: none;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+#list ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  list-style-position: inside;
+  width: 100%;
+}
+#list ol li {
+  background: var(--bg-color-card);
+
+  width: 100%;
+
+  padding: 15px 10px;
+}
+#list h5 {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 830px) {
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .card-fonts {
+    width: 26.33%;
+    height: 170px;
+  }
 }
