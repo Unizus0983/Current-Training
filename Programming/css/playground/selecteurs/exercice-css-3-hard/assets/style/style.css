@@ -228,8 +228,17 @@ header p {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
-@media only screen and (min-width: 900px) {
+/* ***********derniere section************ */
+.card-container.last {
+  display: block;
+  font-family: 'montserrat', sans-serif;
+  font-size: calc(0.8vw + 0.2rem);
+  line-height: 1.5;
+}
+.last:last-child {
+  font-weight: 200;
+}
+.last @media only screen and (min-width: 900px) {
   .card-container {
     flex-direction: row;
     flex-wrap: wrap;
