@@ -6,6 +6,7 @@
   --blue-dark: #354f66;
   --text-light: #626c6d;
   --text-medium: #313435;
+  --color-th: rgb(226, 238, 245);
 }
 
 @font-face {
@@ -61,14 +62,14 @@ h5 {
 .bill-number {
   text-align: right;
   line-height: 2.5;
-  width: 200px;
+  width: 180px;
 }
 .bill-number h2 {
   color: var(--color-title-provider);
   font-size: 2.5vw;
 }
 .bill-number p {
-  width: 80px;
+  width: 90px;
 }
 
 .ref-flex {
@@ -110,7 +111,9 @@ table {
   overflow: hidden;
   border: 1px solid var(--blue-dark);
   text-align: left;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  width: 100%;
+  font-size: calc(0.8vw + 1px);
 }
 thead {
   background-color: #a0bbe5;
@@ -119,20 +122,72 @@ thead {
   border: 2px solid var(--blue-dark);
 }
 
-td {
-  width: calc(20vw - 20px);
-  padding: 10px 10px;
-  border: 1px solid var(--blue-light);
-  text-align: center;
-}
-th {
+thead th {
   text-transform: uppercase;
 }
+th,
+td {
+  width: calc(15vw - 20px);
+  padding: 10px 10px;
+  border: 1px solid var(--blue-light);
+  text-align: right;
+}
 thead th:first-child,
-tbody th {
-  width: calc(50vw - 40px);
+tbody th:first-child,
+tfoot th:first-child {
+  width: calc(55vw - 40px);
+}
+thead th:first-child {
+  text-align: left;
 }
 
 tbody th {
-  color: #f37081;
+  color: var(--text-light);
+  text-transform: capitalize;
+  padding: 10px 10px;
+  border: 1px solid var(--blue-light);
+  background: var(--color-th);
+  text-align: left;
+}
+
+tfoot th {
+  text-align: left;
+  text-transform: capitalize;
+  padding: 0 10px;
+}
+tfoot td,
+tfoot th {
+  padding: 10px 10px;
+  border: none;
+  text-align: right;
+}
+tfoot tr:nth-child(odd) {
+  color: var(--text-medium);
+  background-color: #a0bbe5;
+}
+.payement {
+  padding: 20px 10px;
+  color: var(--text-medium);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.payement h5 {
+  margin-bottom: 5px;
+}
+.rib {
+  border: 1px solid var(--blue-light);
+  padding: 10px 5px;
+  width: 100%;
+  font-size: 1.1vw;
+}
+.mention {
+  text-align: center;
+}
+.mention p {
+  font-style: italic;
+  font-size: 1vw;
 }
