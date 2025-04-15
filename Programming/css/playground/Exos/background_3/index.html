@@ -11,18 +11,50 @@
 </head>
 
 <body>
-    <header>
-        <h1>Ma page avec un fond d'écran</h1>
+    <header class="container">
+        <div class="logo">Site responsive</div>
+        <nav class="navbar">
+            <a href="#">accueil</a>
+
+            <a href="#">à propos</a>
+
+            <a href="#">services</a>
+
+            <a href="#">contact</a>
+        </nav>
     </header>
     <main class="container">
-        <section class="one">
-            <h2>Section 1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, vel!</p>
+
+        <section class="banner">
+            <h1>Bienvenue sur notre site</h1>
+            <p>Découvrez nos services et notre expertise</p>
+            <div><a class="btn small" href="#">En savoir plus</a></div>
         </section>
-        <section class="two">
-            <h2>Section 2</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, vel!</p>
+        <section class="services-container">
+
+            <div class="services">
+                <h2>service 1</h2>
+                <p>description de nos services offert</p>
+            </div>
+            <div class="services">
+                <h2>service 2</h2>
+                <p>description de nos services offert</p>
+            </div>
+            <div class="services">
+                <h2>service 3</h2>
+                <p>description de nos services offert</p>
+            </div>
+
         </section>
+        <form>
+            <h3>contactez-nous</h3>
+            <input type="text" name="nom" id="name" placeholder="nom">
+            <input type="email" name="mail" id="mail" placeholder="E-mail">
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <div><a class="btn " href="#">En savoir plus</a></div>
+
+
+        </form>
     </main>
 
 

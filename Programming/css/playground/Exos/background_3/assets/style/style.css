@@ -9,25 +9,53 @@ body {
   background: url(../images/constellation.jpg);
   color: #fff;
 }
-header {
-  text-align: center;
-  line-height: 2;
+.container {
+  max-width: 960px;
+  padding: 30px 20px;
+  margin: 0 auto;
 }
-h1 {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20%;
+  width: 90%;
+  width: 860px;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
   font-size: 2rem;
 }
-.container {
-  padding: 100px 20px;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+}
+.navbar a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 5px 5px;
+  font-size: calc(1vw + 5px);
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-self: center;
   gap: 50px;
 }
-section {
-  width: 80vw;
+section,
+form {
+  width: 90%;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 30px 20px;
   backdrop-filter: grayscale(100%) blur(5px) brightness(28%) saturate(0%)
     opacity(40%) drop-shadow(10px 10px 5px #000000);
 }
