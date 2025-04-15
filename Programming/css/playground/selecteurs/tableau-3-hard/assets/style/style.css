@@ -1,0 +1,138 @@
+/* variables */
+:root {
+  --color-title-provider: #f37081;
+  --blue-medium: #3578b1;
+  --blue-light: #a0bbe5;
+  --blue-dark: #354f66;
+  --text-light: #626c6d;
+  --text-medium: #313435;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat.ttf);
+}
+
+body {
+  font-size: calc(0.8333vw + 3px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.container,
+.header {
+  padding: 25px 20px;
+}
+/* ******header****** */
+.header a {
+  display: inline-block;
+  color: currentColor;
+  text-decoration-line: underline;
+  transition: 0.3s;
+}
+a:hover {
+  color: var(--blue-medium);
+  transform: scale(1.1) translateX(10px);
+}
+.header {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+h1,
+h2,
+h3 {
+  line-height: 3;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+h1,
+h5 {
+  text-transform: capitalize;
+}
+.address h1 {
+  color: var(--blue-medium);
+  font-size: 2vw;
+}
+.bill-number {
+  text-align: right;
+  line-height: 2.5;
+  width: 200px;
+}
+.bill-number h2 {
+  color: var(--color-title-provider);
+  font-size: 2.5vw;
+}
+.bill-number p {
+  width: 80px;
+}
+
+.ref-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.provider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address,
+.tel {
+  margin: 5px 0;
+}
+.customer {
+  padding-top: 30px;
+}
+.customer h3 {
+  font-size: 1.7vw;
+  color: var(--text-medium);
+}
+.address-customer {
+  background: var(--blue-light);
+  padding: 15px;
+  color: var(--text-medium);
+  border-left: 2px solid var(--blue-medium);
+  border-radius: 5px;
+}
+.address-customer h5 {
+  margin-bottom: 5px;
+}
+/* *****table****** */
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid var(--blue-dark);
+  text-align: left;
+  border-radius: 5px 5px 0 0;
+}
+thead {
+  background-color: #a0bbe5;
+  text-align: center;
+  height: 8vh;
+  border: 2px solid var(--blue-dark);
+}
+
+td {
+  width: calc(20vw - 20px);
+  padding: 10px 10px;
+  border: 1px solid var(--blue-light);
+  text-align: center;
+}
+th {
+  text-transform: uppercase;
+}
+thead th:first-child,
+tbody th {
+  width: calc(50vw - 40px);
+}
+
+tbody th {
+  color: #f37081;
+}
