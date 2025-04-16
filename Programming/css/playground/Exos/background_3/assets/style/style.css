@@ -11,7 +11,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
-  background: url(../images/constellation.jpg);
+  background: url(../images/constellation.jpg) no-repeat center/cover;
   color: var(--text-color);
 }
 .container {
