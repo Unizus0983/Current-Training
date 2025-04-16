@@ -15,7 +15,7 @@ body {
   color: var(--text-color);
 }
 .container {
-  max-width: 960px;
+  max-width: 660px;
   padding: 30px 20px 15px;
   margin: 0 auto;
 }
@@ -168,6 +168,7 @@ footer p {
   body {
     background: url(../images/constellation-table-w1000.webp) center/ cover;
   }
+
   .services-container {
     display: flex;
 
