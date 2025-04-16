@@ -14,7 +14,7 @@
     <header class="container">
         <div class="logo">Site responsive</div>
         <nav class="navbar">
-            <a href="#">accueil</a>
+            <a class="active" href="#">accueil</a>
 
             <a href="#">à propos</a>
 
@@ -28,7 +28,7 @@
         <section class="banner">
             <h1>Bienvenue sur notre site</h1>
             <p>Découvrez nos services et notre expertise</p>
-            <div><a class="btn small" href="#">En savoir plus</a></div>
+            <button class="btn small"><a href="#">En savoir plus</a></button>
         </section>
         <section class="services-container">
 
@@ -48,14 +48,21 @@
         </section>
         <form>
             <h3>contactez-nous</h3>
-            <input type="text" name="nom" id="name" placeholder="nom">
-            <input type="email" name="mail" id="mail" placeholder="E-mail">
-            <textarea name="message" id="message" placeholder="Message"></textarea>
-            <div><a class="btn " href="#">En savoir plus</a></div>
+            <div class="form-container">
+                <input type="text" name="nom" id="name" placeholder="nom" autocapitalize="sentences">
+                <input type="email" name="mail" id="mail" placeholder="E-mail" autocapitalize="sentences">
+                <textarea class="text" name="message" id="message" placeholder="Message" autocapitalize="sentences"
+                    rows="10"></textarea>
+
+                <button class=" btn large"><a href="#">En savoir plus</a></button>
+            </div>
 
 
         </form>
     </main>
+    <footer class="container">
+        <p>&#169 - 2025. Tous droits réservés.</p>
+    </footer>
 
 
 
