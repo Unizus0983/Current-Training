@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   border: none;
-
+  list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
 }
