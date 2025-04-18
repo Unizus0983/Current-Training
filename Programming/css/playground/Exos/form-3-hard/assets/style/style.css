@@ -2,6 +2,9 @@
   --bt-color: #2c90d3;
   --color-focus: #bfd4e225;
   --boder-input: #154768;
+  --bg-form-container: #8eb7d1;
+  --hover-input: #f4340b;
+  --color-h3: #bde038;
 }
 
 @font-face {
@@ -16,18 +19,17 @@ body {
   padding-top: 50px;
 }
 .form-container {
-  max-width: 800px;
+  max-width: 1000px;
 
   padding: 30px 30px;
   margin: 0 auto;
-  background: rgb(236, 234, 234);
+  background: var(--bg-form-container);
 }
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px 20px;
-
   background: #fff;
   -webkit-box-shadow: 3px 4px 13px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 4px 13px 0px rgba(0, 0, 0, 0.5);
@@ -36,21 +38,24 @@ form {
 h1 {
   text-align: center;
 }
+h2 {
+  color: var(--bt-color);
+}
+h3 {
+  color: var(--color-h3);
+  padding: 20px 0;
+}
 
 .input-container {
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 5px;
 }
-.input-container:last-child {
-  align-items: left;
-  gap: 20px;
-  padding: 20px 0px;
-}
+
 input,
 select {
   border: 1px solid var(--boder-input);
@@ -60,16 +65,15 @@ select {
 
 input:hover,
 select:hover {
-  border-color: red;
+  border-color: var(--hover-input);
 }
 input:focus,
 select:focus {
   background-color: var(--color-focus);
 }
-
-input,
+input:not([type='checkbox']):not([type='radio']),
 select {
-  height: 40px;
+  height: 50px;
   text-indent: 3px;
 }
 input::placeholder {
@@ -81,39 +85,13 @@ select,
   text-transform: capitalize;
 }
 
-input[type='checkbox'] {
-  margin-right: 8px;
-  height: inherit;
-}
-
-label,
-legend {
-  font-weight: 600;
-}
-fieldset {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.container-radio {
-  display: flex;
-  align-items: center;
-  gap: 0.2em;
-}
-
-input[type='radio'] {
-  margin-right: 15px;
-
-  display: inline-block;
-}
-.radio-label {
-  margin-right: 15px;
-}
-label:last-child {
-  font-weight: 500;
+.checking label {
+  font-weight: 400;
   text-transform: none;
+  margin-left: 1rem;
 }
 
+/* *********button******* */
 .btn {
   padding: 0.3rem 0.6rem;
   cursor: pointer;
@@ -121,17 +99,33 @@ label:last-child {
   background: var(--bt-color);
   color: aliceblue;
   height: 40px;
+  width: 30%;
   border: none;
   transform: 0.2s;
-  width: fit-content;
   justify-content: flex-start;
 }
 .btn:hover {
   transform: scale(1.1);
 }
-/* .btn.large {
-  width: 100%;
-} */
+.flex-btn,
+.flex-row-btn {
+  padding: 20px 0;
+}
+
+.flex-row-btn {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 span {
   color: var(--bt-color);
+}
+
+/* ******page 3 ***** */
+.thanks {
+  text-align: center;
+  line-height: 1.5;
+}
+.thanks p:first-of-type {
+  margin-bottom: 10px;
 }
