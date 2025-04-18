@@ -18,6 +18,11 @@ html {
 body {
   padding-top: 50px;
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .form-container {
   max-width: 1000px;
 
@@ -34,6 +39,60 @@ form {
   -webkit-box-shadow: 3px 4px 13px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 4px 13px 0px rgba(0, 0, 0, 0.5);
 }
+.progress-step {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 5px;
+}
+.step {
+  width: 40px;
+  height: 40px;
+  padding: 7px 14px;
+  color: aliceblue;
+  background: #2c90d3;
+  border: 1px solid transparent;
+  border-radius: 40px;
+
+  z-index: 1000;
+}
+.number-step-1 {
+  display: inline-block;
+  position: relative;
+  width: 12vw;
+  z-index: 50;
+}
+.number-step-1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #2c90d3;
+  bottom: 27px;
+  left: 60%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.number-step-2 {
+  display: inline-block;
+  position: relative;
+  width: 12vw;
+  z-index: 50;
+}
+.number-step-2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #2c90d3;
+  bottom: 27px;
+  left: 60%;
+  transform: translate(-50%);
+  z-index: 1;
+}
 
 h1 {
   text-align: center;
@@ -44,6 +103,9 @@ h2 {
 h3 {
   color: var(--color-h3);
   padding: 20px 0;
+}
+textarea {
+  border: 1px solid var(--boder-input);
 }
 
 .input-container {
@@ -79,16 +141,24 @@ select {
 input::placeholder {
   margin-left: 5px;
 }
-label,
-select,
-.btn {
+
+label::first-letter,
+select::first-letter,
+.btn::first-letter {
   text-transform: capitalize;
 }
 
 .checking label {
   font-weight: 400;
-  text-transform: none;
   margin-left: 1rem;
+  display: inline-block;
+}
+.checking {
+  margin-bottom: 20px;
+}
+
+.btn:hover .checking {
+  margin-bottom: 15px;
 }
 
 /* *********button******* */
