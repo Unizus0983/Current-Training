@@ -56,7 +56,7 @@ form {
 
   z-index: 1000;
 }
-.number-step-1 {
+/* .number-step-1 {
   display: inline-block;
   position: relative;
   width: 12vw;
@@ -73,14 +73,17 @@ form {
   left: 60%;
   transform: translate(-50%);
   z-index: 1;
-}
+} */
 
+.number-step-1,
 .number-step-2 {
   display: inline-block;
   position: relative;
-  width: 12vw;
+  width: clamp(88px, 19vw, 196px); /* min 100px, max 300px, fluide au milieu */
   z-index: 50;
 }
+
+.number-step-1::after,
 .number-step-2::after {
   content: '';
   display: block;
@@ -89,9 +92,13 @@ form {
   width: 100%;
   background: #2c90d3;
   bottom: 27px;
-  left: 60%;
-  transform: translate(-50%);
+  left: 25px;
+  /* left: 65%;
+  transform: translate(-65%); */
   z-index: 1;
+}
+span {
+  color: var(--bt-color);
 }
 
 h1 {
@@ -123,6 +130,7 @@ select {
   border: 1px solid var(--boder-input);
   border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
 }
 
 input:hover,
@@ -144,6 +152,7 @@ input::placeholder {
 
 label::first-letter,
 select::first-letter,
+/*  balises <option> est très limité et dépend du système d’exploitation. La pseudo-classe ::first-letter est tout simplement ignorée sur les balises <option> dans la majorité des cas. */ option,
 .btn::first-letter {
   text-transform: capitalize;
 }
@@ -185,10 +194,6 @@ select::first-letter,
 .flex-row-btn {
   flex-direction: row;
   justify-content: space-between;
-}
-
-span {
-  color: var(--bt-color);
 }
 
 /* ******page 3 ***** */
