@@ -2,7 +2,7 @@
   --bg-navbar: #1815b9;
   --color-hover: #f3a172;
   --links-navbar: #f3f1f1;
-  --section-color1: #d6eff58f;
+  --section-color1: #d6eff560;
 }
 
 @font-face {
@@ -138,6 +138,7 @@ header {
   margin: 0 auto;
   padding: 20px 20px;
 }
+
 .container-banner {
   display: flex;
   justify-content: center;
@@ -148,6 +149,8 @@ header {
   height: fit-content;
   background-color: #fff;
   padding: 50px 0;
+  height: 50vh;
+  max-height: 500px;
 }
 .title {
   text-transform: capitalize;
@@ -158,9 +161,17 @@ p {
   font-weight: 500;
   font-size: calc(0.6vw + 10px);
 }
+
+/* *********section********/
+section {
+  height: 50vh;
+  padding: 30px 0;
+}
+.pair {
+  background: var(--section-color1);
+}
 .services-container {
   display: flex;
-
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -170,11 +181,11 @@ p {
   padding: 40px 20px;
   text-align: center;
   width: 100%;
-
+  background-color: #fff;
   box-shadow: 5px 5px 15px 5px rgba(24, 21, 185, 0.22);
 }
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 h3 {
   font-size: 0.9rem;
