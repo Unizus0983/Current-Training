@@ -48,19 +48,64 @@ header {
   padding: 7px 15px 0;
   text-transform: capitalize;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: calc(1vw + 7px);
   position: relative;
 }
-
-.navbar a::before {
-  content: '';
-  height: 2px;
-  display: block;
-  background: #f3f1f1;
-
-  left: 0;
-  top: 30px;
+.links-navbar:hover :not(:hover) {
+  color: unset;
 }
+.active:after:hover :not(:hover) {
+  height: 0;
+}
+
 .active {
   color: var(--color-hover);
 }
+
+.links-navbar::after {
+  content: '';
+  height: 3px;
+  display: block;
+  background: var(--color-hover);
+  right: 0;
+  left: 0;
+  width: 0%;
+  transform: translateY(10px);
+
+  transition: width 0.3s ease;
+}
+.links-navbar:hover::after {
+  animation: lineslide 0.2s ease-in-out forwards;
+}
+.active::after {
+  content: '';
+  height: 3px;
+  display: block;
+  background: var(--color-hover);
+  right: 0;
+  left: 0;
+  visibility: inherit;
+  transform: translateY(10px);
+}
+.links-navbar:hover {
+  color: var(--color-hover);
+}
+
+/* *********after links transform****** */
+
+@keyframes lineslide {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 50%;
+    left: 25%;
+  }
+  100% {
+    width: 100%;
+    left: 0%;
+  }
+}
+
+/* ********button******* */
