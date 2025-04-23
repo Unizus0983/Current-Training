@@ -44,6 +44,7 @@ header {
 .navbar {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.6rem;
   padding: 7px 15px 0;
   text-transform: capitalize;
@@ -51,12 +52,10 @@ header {
   font-size: calc(1vw + 7px);
   position: relative;
 }
-.links-navbar:hover :not(:hover) {
+.navbar:hover :not(:hover) {
   color: unset;
 }
-.active:after:hover :not(:hover) {
-  height: 0;
-}
+/* voir comment faire disparaître aussi le after sous .active  ?????*/
 
 .active {
   color: var(--color-hover);
@@ -109,3 +108,40 @@ header {
 }
 
 /* ********button******* */
+.contact {
+  background-color: var(--color-hover);
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.contact:hover {
+  color: var(--bg-navbar);
+  background-color: var(--links-navbar);
+  transform: scale(1.1);
+}
+
+/* ************main**************** */
+
+.main-container {
+  text-align: center;
+}
+.banner-container {
+  line-height: 2;
+  height: 20vh;
+  background: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 58%,
+    rgba(32, 32, 32, 0.281) 95%
+  );
+}
+.title {
+  margin-top: 50px;
+  text-transform: capitalize;
+  font-size: calc(3.5vw + 7px);
+  text-shadow: 2px 2px 2px grey;
+}
+p {
+  font-weight: 500;
+  font-size: calc(0.7vw + 10px);
+}
