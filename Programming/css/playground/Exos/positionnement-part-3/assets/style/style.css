@@ -2,7 +2,8 @@
   --bg-navbar: #1815b9;
   --color-hover: #f3a172;
   --links-navbar: #f3f1f1;
-  --section-color1: #d6eff560;
+  --section-color1: #b3d5e925;
+  --color-dashed: #b6b6b6;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   margin-top: 15vh;
+  line-height: 1.5;
 }
 a {
   display: inline-block;
@@ -65,8 +67,10 @@ header {
 .navbar:hover :not(:hover) {
   color: unset;
 }
-/* voir comment faire disparaître aussi le after sous .active  ?????*/
-
+.navbar:hover .active:not(:hover)::after {
+  /* width: 0%; */
+  visibility: hidden;
+}
 .active {
   color: var(--color-hover);
 }
@@ -93,6 +97,7 @@ header {
   background: var(--color-hover);
   right: 0;
   left: 0;
+
   visibility: inherit;
   transform: translateY(10px);
 }
@@ -131,12 +136,14 @@ header {
 }
 
 /* ************main**************** */
-
+.main-container {
+  width: 100%;
+}
 .container {
-  max-width: 1300px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 20px 20px 20px;
 }
 
 .container-banner {
@@ -148,9 +155,7 @@ header {
   line-height: 2;
   height: fit-content;
   background-color: #fff;
-  padding: 50px 0;
-  height: 50vh;
-  max-height: 500px;
+  min-height: 50vh;
 }
 .title {
   text-transform: capitalize;
@@ -164,7 +169,7 @@ p {
 
 /* *********section********/
 section {
-  height: 50vh;
+  min-height: 50vh;
   padding: 30px 0;
 }
 .pair {
@@ -174,18 +179,19 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .service {
-  padding: 40px 20px;
+  padding: 30px 30px;
   text-align: center;
   width: 100%;
   background-color: #fff;
   box-shadow: 5px 5px 15px 5px rgba(24, 21, 185, 0.22);
 }
 h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
+  text-transform: capitalize;
 }
 h3 {
   font-size: 0.9rem;
@@ -201,8 +207,49 @@ h3 {
 .service i {
   color: var(--bg-navbar);
 }
+/* **************small_container***** */
+
+.container.small {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: left;
+  /* padding: 30px 30px; */
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+.portfolio {
+  text-align: center;
+  padding: 50px 20px;
+  border: 2px dashed var(--color-dashed);
+  border-radius: 15px;
+}
+/* **************footer************ */
+footer {
+  color: var(--links-navbar);
+  background: var(--bg-navbar);
+  min-height: 8vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* ******médias****** */
+@media only screen and (max-width: 500px) {
+  .navbar {
+    gap: 0.6rem;
+    padding-bottom: 5px;
+  }
+  .links-navbar::after,
+  .active::after {
+    transform: translateY(0);
+  }
+  .contact {
+    padding: 0.1rem 0.5rem;
+  }
+}
 @media only screen and (max-width: 800px) {
   .services-container {
     flex-direction: column;
