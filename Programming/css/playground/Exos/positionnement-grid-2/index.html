@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -17,7 +20,7 @@
     <header>
 
         <div class="logo_container">
-            <img src="./images/feuille.png" alt="">
+            <img class="img-header-logo" src="./images/feuille.png" alt="feuille">
             </img>
             <p class="name-logo">EcoDesign</p>
         </div>
@@ -30,6 +33,8 @@
             <a href="#" class="link links_nav">blog</a>
             <a href="#" class="link links_nav">à propos</a>
             <a href="#" class="link links_nav">contact</a>
+
+
 
         </nav>
         <main class="main_container container">
@@ -102,42 +107,85 @@
 
         </main>
         <aside class=" sidebar container">
-            <div class="item-sidebar">
-                <h2>articles récents</h2>
-                <a href="#" class="links-article">Optimisation des images pour
-                    le web</a>
-                <a href="#" class="links-article">Comment réduire la
-                    consommation d'énergie de
-                    votre site</a>
-                <a href="#" class="links-article">L'impact environnemental du streaming vidéo</a>
-                <a href="#" class="links-article">10 astuces pour un code plus propre</a>
+            <div class="sticky">
+                <div class="item-sidebar">
+                    <h2>articles récents</h2>
+                    <a href="#" class="links-article">Optimisation des images pour
+                        le web</a>
+                    <a href="#" class="links-article">Comment réduire la
+                        consommation d'énergie de
+                        votre site</a>
+                    <a href="#" class="links-article">L'impact environnemental du streaming vidéo</a>
+                    <a href="#" class="links-article">10 astuces pour un code plus propre</a>
 
-            </div>
-            <div class="item-sidebar">
-                <h2>newsletter</h2>
-                <input type="email" placeholder="votre email">
-                <input type="submit" value="s'abonner" class="btn">
-
-            </div>
-            <div class="item-sidebar">
-                <h2>Catégories</h2>
-                <div class="categories">
-                    <a class="btn btn-categories">Développement</a>
-                    <a class="btn btn-categories">Performances</a>
-                    <a class="btn btn-categories">Accessibilité</a>
-                    <a class="btn btn-categories">design</a>
-                    <a class="btn btn-categories">SEO</a>
                 </div>
+                <div class="item-sidebar">
+                    <h2>newsletter</h2>
+                    <input type="email" placeholder="votre email">
+                    <input type="submit" value="s'abonner" class="btn">
+
+                </div>
+                <div class="item-sidebar">
+                    <h2>Catégories</h2>
+                    <div class="categories">
+                        <a class="btn btn-categories">Développement</a>
+                        <a class="btn btn-categories">Performances</a>
+                        <a class="btn btn-categories">Accessibilité</a>
+                        <a class="btn btn-categories">design</a>
+                        <a class="btn btn-categories">SEO</a>
+                    </div>
 
 
 
+                </div>
             </div>
         </aside>
 
     </div>
-    <footer>
+    <footer id="footer">
+
+        <div class="footer-container">
+            <div class="card-contact ">
+                <div class="logo_container">
+                    <img src="./images/feuille.png" alt="">
+                    </img>
+                    <p class="name-logo">EcoDesign</p>
+                </div>
+                <p>pour un Web plus respectueux de notre planète</p>
+            </div>
+            <div class="card-contact">
+                <h4>liens rapides</h4>
+                <ul>
+                    <li><a href="#" class="link-footer">accueil</a></li>
+                    <li><a href="#" class="link-footer">service</a></li>
+                    <li><a href="#" class="link-footer">blog</a></li>
+                    <li><a href="#" class="link-footer">contact</a></li>
+                </ul>
+            </div>
+            <div class="card-contact">
+                <h4>contact</h4>
+                <p>123 Rue de l'Ecologie</p>
+                <p>75000, Paris France</p>
+                <a href="mailto:">Email: contact@ecodesign.fr</a>
+                <p>tél: +33 1 23 45 67 89</p>
+            </div>
+            <div class="card-contact  ">
+                <h4>Suivez-nous</h4>
+                <div class="fa-icon">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
 
 
+            </div>
+        </div>
+
+
+        <div class="card-contact copyright ">
+            <p>&#169;2025 EcoDesign.Tous droits réservés</p>
+        </div>
     </footer>
 
 
