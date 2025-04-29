@@ -55,7 +55,6 @@ h1 {
   cursor: pointer;
   box-shadow: 0px 10px 13px -7px #9b9b9b,
     5px 5px 16px 5px rgba(206, 205, 205, 0.45);
-  transition: 0.2s;
 }
 
 /* ******************************btn1**************************************** */
@@ -71,31 +70,17 @@ h1 {
 /* ******************************btn2**************************************** */
 .btn-secondary {
   background: var(--color-secondary);
-  transition: scale 0.8s ease;
-}
-.btn-secondary:hover {
-  transform: scale(0.6);
-}
-
-/* ******************************btn3**************************************** */
-
-.btn-secondary-bis {
-  background: var(--color-secondary);
   transition: scale 0.3s ease;
 }
-.btn-secondary-bis:hover {
+.btn-secondary:hover {
   transform: scale(1.1);
 }
 
-/* ******************************btn3**************************************** */
+/* ******************************btn**************************************** */
 .btn-danger {
   background: var(--color-danger);
   transition: rotate 0.3s ease-out;
 }
 .btn-danger:hover {
   transform: rotate(10deg);
-}
-
-.btn:active {
-  transform: scale(0.65);
 }
