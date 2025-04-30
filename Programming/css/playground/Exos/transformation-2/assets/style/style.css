@@ -1,27 +1,52 @@
 :root {
   /* *************normal*********** */
-  --color-title: #000;
+  --color-title: #2c2c2c;
   --color-primary: #568ee0;
   --color-text: #6e6d6d;
-  --bg-card: #eceaeaef;
+  --bg-card: #f5f5f5ef;
   --bg-body: #fff;
   --bg-line: #dddddd;
+  --box-shadow: var(--bg-line);
 }
-.dark-theme:root {
-  --color-text-dark: #fff;
-  --bg-body-dark: #242424;
-  --bg-card-dark: #4b4949;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #2c2c2c;
+    --color-title: #fff;
+    --color-card: #6e6d6d;
+    --box-shadow: #6e6e6e;
+  }
+}
+.dark-theme {
+  --bg-body: #2c2c2c;
+  --color-title: #fff;
+  --color-text: #d3d0d0;
+  --bg-card: #2e2d2d;
+  --box-shadow: #6e6e6e;
 }
 
 html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 /* *******************dark-theme****************** */
 
 body {
   background: var(--bg-body);
   color: var(--color-text);
+}
+h1 {
+  font-size: 3rem;
+  color: var(--color-title);
+  text-align: center;
+}
+h2 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  text-transform: capitalize;
+}
+.text-title {
+  text-align: center;
 }
 
 header {
@@ -52,7 +77,47 @@ link-nav {
   padding: 0.3rem 0.7rem;
 }
 .container {
-  padding: 15px 20px;
+  padding: 30px 20px;
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+.card-container {
+  display: flex;
+  justify-content: center;
+  /* align-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.card {
+  padding: 15px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  height: 15vh;
+  -webkit-box-shadow: 0px 5px 20px var(--box-shadow);
+  box-shadow: 0px 5px 20px var(--box-shadow);
+}
+footer {
+  background: var(--bg-card);
+  text-align: center;
+  min-height: 5vh;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-shadow: 0px 5px 20px var(--box-shadow);
+  box-shadow: 0px 5px 20px var(--box-shadow);
+}
+
+/* @media only screen and (min-width: 780px) {
+  .card-container {
+    flex-wrap: nowrap;
+  }
+} */
