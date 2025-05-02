@@ -8,19 +8,21 @@
 $font: 'Montserrat', sans-serif;
 $bg1: #1e1e1e;
 $bg-main: #fff;
-$text-light: #e6e6e6;
-$text-dark: #171717;
+$text-light: #fafafa;
+$text-dark: #0c0c0c;
 $grey: #bebdbd;
-$link-hover:#efb610;
-$link-button:#1766e8;
+$link-hover: #efb610;
+$link-button: #1766e8;
+// $overlay-dark:linear-gradient(circle,rgba(14, 15, 15, 0.68) 68%, rgba(0, 0, 0, 0.47) 100%);;
+// $overlay-light:#9b1f1f;
 
 //médias
 
 $breakpoints: (
-        'tablet-down': 992px,
-        'desktop-down': 1280px
-    );
-    @mixin media-min($_key) {
+    'tablet-down': 992px,
+    'desktop-down': 1280px
+);
+@mixin media-min($_key) {
     @media screen and (min-width: map-get($breakpoints, $_key)) {
         & {
             @content;
@@ -32,13 +34,58 @@ html {
     font-family: $font;
     font-size: 14px;
 }
-main{
+body {
+    position: relative;
+}
+main {
     background: $bg-main;
 }
 
-.container{
+.container {
     padding: 1.25rem 1.875rem;
 }
-a{
+.title {
     text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+a {
+    text-transform: uppercase;
+}
+section {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.card {
+    min-width: 100%;
+    height: 620px;
+}
+.card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.overlay-wight {
+    color: $text-light;
+    background: linear-gradient(
+        180deg,
+        rgba(14, 15, 15) 49%,
+        rgba(0, 0, 0, 0.47) 97%
+    );
+}
+.overlay-dark {
+    color: $text-dark;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255) 21%,
+        rgba(0, 0, 0, 0.12) 97%
+    );
+}
+
+.overlay-dark,
+.overlay-wight {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
 }

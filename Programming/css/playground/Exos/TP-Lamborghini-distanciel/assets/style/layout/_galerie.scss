@@ -1,0 +1,28 @@
+.main-container {
+    margin-top: 0px;
+    max-width: 1920px;
+}
+
+.flex-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 10px;
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 2rem;
+    }
+
+    .item1 {
+        background-image: url(../images/background1.jpg);
+    }
+    .item2 {
+        background-image: url(../images/background2.jpg);
+    }
+}
+
+
