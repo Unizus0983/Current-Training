@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat.ttf);
+}
+
+//variables
+
+$font: 'Montserrat', sans-serif;
+$bg1: #1e1e1e;
+$bg-main: #fff;
+$text-light: #e6e6e6;
+$text-dark: #171717;
+$grey: #bebdbd;
+$link-hover:#efb610;
+$link-button:#1766e8;
+
+//médias
+
+$breakpoints: (
+        'tablet-down': 992px,
+        'desktop-down': 1280px
+    );
+    @mixin media-min($_key) {
+    @media screen and (min-width: map-get($breakpoints, $_key)) {
+        & {
+            @content;
+        }
+    }
+}
+
+html {
+    font-family: $font;
+    font-size: 14px;
+}
+main{
+    background: $bg-main;
+}
+
+.container{
+    padding: 1.25rem 1.875rem;
+}
+a{
+    text-transform: uppercase;
+}
