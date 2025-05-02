@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -91,7 +92,7 @@ body {
 }
 
 main {
-  background: #fff;
+  background: #cecbcb;
 }
 
 .container {
@@ -118,6 +119,19 @@ section {
   height: 620px;
 }
 
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 2.5rem;
+}
+
 .card p {
   font-size: 1.2rem;
   font-weight: 600;
@@ -125,14 +139,10 @@ section {
 
 .overlay-wight {
   color: #fafafa;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(49%, rgb(14, 15, 15)), color-stop(97%, rgba(0, 0, 0, 0.47)));
-  background: linear-gradient(180deg, rgb(14, 15, 15) 49%, rgba(0, 0, 0, 0.47) 97%);
 }
 
 .overlay-dark {
   color: #0c0c0c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgb(255, 255, 255)), color-stop(97%, rgba(0, 0, 0, 0.12)));
-  background: linear-gradient(180deg, rgb(255, 255, 255) 21%, rgba(0, 0, 0, 0.12) 97%);
 }
 
 .overlay-dark,
@@ -141,10 +151,6 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-}
-
-header {
-  position: relative;
 }
 
 .navbar-container {
@@ -237,23 +243,75 @@ header {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
-  margin: 10px 0 10px;
-}
-.flex-section .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  line-height: 2rem;
+  margin-bottom: 10px;
 }
 .flex-section .item1 {
-  background-image: url(../images/background1.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.67)), color-stop(97%, rgba(0, 0, 0, 0.12))), url(../images/background1.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67) 21%, rgba(0, 0, 0, 0.12) 97%), url(../images/background1.jpg);
 }
 .flex-section .item2 {
-  background-image: url(../images/background2.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.67)), color-stop(97%, rgba(0, 0, 0, 0.12))), url(../images/background2.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67) 21%, rgba(0, 0, 0, 0.12) 97%), url(../images/background2.jpg);
+}
+.flex-section .link-info::after {
+  content: "☛";
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-left: 0.6rem;
+}
+.flex-section .link-info:hover {
+  color: #efb610;
+  -webkit-transform: translateX(10px) scale(1.1);
+          transform: translateX(10px) scale(1.1);
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 10px;
+  grid-template-areas: "a a " "b b " "c c " "d d " "e e " "f f ";
+}
+@media screen and (min-width: 992px) {
+  .grid-section {
+    grid-template-areas: "a b" "c d" "e f";
+  }
+}
+@media screen and (min-width: 1280px) {
+  .grid-section {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: " a b c" "d e f";
+  }
+}
+.grid-section .item3 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.67)), color-stop(97%, rgba(0, 0, 0, 0.12))), url(../images/image1.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67) 21%, rgba(0, 0, 0, 0.12) 97%), url(../images/image1.jpg);
+  grid-area: a;
+}
+.grid-section .item4 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(229, 226, 226, 0.67)), color-stop(97%, rgba(185, 184, 184, 0.12))), url(../images/image2.jpg);
+  background-image: linear-gradient(180deg, rgba(229, 226, 226, 0.67) 21%, rgba(185, 184, 184, 0.12) 97%), url(../images/image2.jpg);
+  grid-area: b;
+}
+.grid-section .item5 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.67)), color-stop(97%, rgba(0, 0, 0, 0.12))), url(../images/image3.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67) 21%, rgba(0, 0, 0, 0.12) 97%), url(../images/image3.jpg);
+  grid-area: c;
+}
+.grid-section .item6 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(229, 226, 226, 0.67)), color-stop(97%, rgba(185, 184, 184, 0.12))), url(../images/image4.jpg);
+  background-image: linear-gradient(180deg, rgba(229, 226, 226, 0.67) 21%, rgba(185, 184, 184, 0.12) 97%), url(../images/image4.jpg);
+  grid-area: d;
+}
+.grid-section .item7 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.67)), color-stop(97%, rgba(0, 0, 0, 0.12))), url(../images/image5.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67) 21%, rgba(0, 0, 0, 0.12) 97%), url(../images/image5.jpg);
+  grid-area: e;
+}
+.grid-section .item8 {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(229, 226, 226, 0.67)), color-stop(97%, rgba(185, 184, 184, 0.12))), url(../images/image6.jpg);
+  background-image: linear-gradient(180deg, rgba(229, 226, 226, 0.67) 21%, rgba(185, 184, 184, 0.12) 97%), url(../images/image6.jpg);
+  grid-area: f;
 }/*# sourceMappingURL=index.css.map */
