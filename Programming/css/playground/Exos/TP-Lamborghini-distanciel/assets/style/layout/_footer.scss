@@ -8,12 +8,12 @@ footer{
     flex-wrap: wrap;
    
    
-    justify-content:space-between;
-    align-items: center;
+   
+ 
     gap: 20px;
     .column-footer{
         max-width: 25%;
-        margin: 0 auto;
+      flex: 1;
     }
 
     h4{
