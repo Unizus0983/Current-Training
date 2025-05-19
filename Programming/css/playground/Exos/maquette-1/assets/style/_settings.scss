@@ -1,27 +1,97 @@
-
-html{
-    font-family: "Roboto+Condensed",sans-serif;
-    font-family: "Roboto",sans-serif;
-    font-size: 16px;
-    
+html {
+  font-family: 'Roboto+Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
-
 
 // ---------------variables---------------
 //----color
-$color-primary:#CCA57C;
-$color-secondary:#272727;
-$white:#fff;
-$grey:#606060;
+$color-primary: #cca57c;
+$color-secondary: #272727;
+$color-rgba: #272727b2;
+$white: #fff;
+$grey: #606060;
 
-$font-primary:"Roboto", sans-serif;
-$font-secondary:"Roboto+Condensed", sans-serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Roboto+Condensed', sans-serif;
 
+$btn-padding: 0.8rem 0.8rem;
 
-.container{
-    max-width:1168px ;
-    margin: 0 auto;
-    padding: 0 20px;
+$line-height-s: 1;
+$line-height-m: 1.5;
+$line-height-l: 2;
+
+//****title
+h1,
+h2,h3,h4 {
+  
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 3.65rem;
+  font-weight: 500;
+}
+h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+}
+h3{
+    font-size: 1.2rem;
+}
+h4{
+    font-size: 0.9rem;
+}
+p {
+  font-weight: 400;
+  line-height: $line-height-m;
+  font-family: $color-secondary;
 }
 
+.container {
+  max-width: 1168px;
+  margin: 0 auto;
+  padding: 30px 30px;
+}
+.section_container {
+  padding: 40px 30px;
+}
+.brown {
+  color: $white;
+  background-color: $color-secondary;
+}
+.gold {
+  background-color: $color-primary;
+  color: $white;
+}
+.text_gold {
+  color: $color-primary;
+}
+.text_brown {
+  color: $color-secondary;
+}
+// Définition de l'animation
+@keyframes effectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  //   50% {
+  //     width: 25%;
+  //     opacity: 0.5;
+  //   }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
 
+// Mixin pour utiliser l'animation
+@mixin lineFrame {
+  animation-name: effectLine;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}

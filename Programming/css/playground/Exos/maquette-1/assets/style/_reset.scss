@@ -51,8 +51,8 @@ img,
 picture,
 video,
 canvas,
-svg,
-span {
+svg
+ {
   display: block;
   max-width: 100%;
 }
@@ -60,7 +60,8 @@ span {
 input,
 button,
 textarea,
-select {
+select,
+i,span {
   
   display: inline-block;
 }

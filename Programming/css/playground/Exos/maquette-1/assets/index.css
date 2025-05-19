@@ -57,8 +57,7 @@ img,
 picture,
 video,
 canvas,
-svg,
-span {
+svg {
   display: block;
   max-width: 100%;
 }
@@ -67,7 +66,8 @@ span {
 input,
 button,
 textarea,
-select {
+select,
+i, span {
   display: inline-block;
 }
 
@@ -82,10 +82,128 @@ html {
   font-size: 16px;
 }
 
+h1,
+h2, h3, h4 {
+  font-family: "Roboto+Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3.65rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 0.9rem;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: #272727;
+}
+
 .container {
   max-width: 1168px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 30px 30px;
+}
+
+.section_container {
+  padding: 40px 30px;
+}
+
+.brown {
+  color: #fff;
+  background-color: #272727;
+}
+
+.gold {
+  background-color: #cca57c;
+  color: #fff;
+}
+
+.text_gold {
+  color: #cca57c;
+}
+
+.text_brown {
+  color: #272727;
+}
+
+@-webkit-keyframes effectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes effectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.btn {
+  font-family: "Roboto+Condensed", sans-serif;
+  text-transform: uppercase;
+  background-color: #cca57c;
+  padding: 0.8rem 0.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.round i {
+  margin-left: 0.4rem;
+}
+
+.round {
+  border-radius: 20px;
+  text-align: center;
+}
+
+.round:hover,
+.rectangular:hover {
+  color: #cca57c;
+  background-color: #fff;
+}
+
+.rectangular {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/*****************social-icon**************/
+.social_icons i {
+  color: #fff;
+  padding: 0.5rem;
+  border: 1px solid #fff;
+}
+
+.social_icons i:hover {
+  color: #cca57c;
+  border-color: #cca57c;
 }
 
 header {
@@ -97,8 +215,7 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  text-transform: uppercase;
-  line-height: 1;
+  position: relative;
 }
 header .header_nav {
   display: -webkit-box;
@@ -110,7 +227,7 @@ header .header_nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 150px;
+  gap: 50px;
 }
 header .header-logo {
   -webkit-box-align: start;
@@ -129,6 +246,7 @@ header .header-logo {
       -ms-flex-align: center;
           align-items: center;
   gap: 150px;
+  text-transform: uppercase;
 }
 .container_links .link_nav {
   height: 100%;
@@ -136,34 +254,203 @@ header .header-logo {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-.container_links .link:hover {
-  color: #CCA57C;
+
+.link {
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.container_links .link.active {
-  color: #CCA57C;
+.link:hover {
+  color: #cca57c;
 }
-.container_links .link.active::after {
+.link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #cca57c;
+  opacity: 0;
+  margin-top: 0.2rem;
+}
+.link:hover::after {
+  -webkit-animation-name: effectLine;
+          animation-name: effectLine;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.link.active {
+  color: #cca57c;
+}
+.link.active::after {
   content: "";
   display: block;
   height: 2px;
   width: 100%;
-  background: #CCA57C;
+  background: #cca57c;
+  opacity: 1;
   margin-top: 0.2rem;
-  visibility: visible;
 }
-.container_links .link::after {
+
+.hearder_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 300px;
+}
+
+.content {
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.content h1 {
+  text-align: right;
+}
+.content p {
+  text-align: right;
+}
+
+.social_icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 60px;
+  background-color: #272727;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+main {
+  background-color: #606060;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 10px;
+}
+.grid_container .left_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.grid_container .left_part .text_gold {
+  padding-left: 50px;
+  position: relative;
+}
+.grid_container .left_part .text_gold::before {
   content: "";
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: #CCA57C;
-  visibility: hidden;
-  margin-top: 0.2rem;
-  -webkit-transition: visibility 0.2s;
-  transition: visibility 0.2s;
+  height: 100px;
+  width: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #cca57c;
 }
-.container_links .link:hover::after {
-  visibility: visible;
+.grid_container .right_part {
+  background: url(./img/london_hall.jpg) no-repeat center/cover;
+  position: relative;
+  margin-top: 70px;
+}
+.grid_container .right_part .rectangular {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+}
+
+.flex_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 29px;
+}
+.flex_container .concert {
+  height: 400px;
+  padding: 30px 30px;
+}
+.flex_container .concert_twelve {
+  max-width: 38%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 20px;
+  padding-top: 0;
+}
+.flex_container .concert_twelve img {
+  max-width: 150px;
+  height: 150px;
+}
+.flex_container .concert_london,
+.flex_container .concert_paris {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 291px;
+}
+.flex_container .concert_london .date,
+.flex_container .concert_paris .date {
+  padding: 0.8rem 0.8rem;
+  background-color: rgba(39, 39, 39, 0.6980392157);
+  max-width: 100px;
+  font-size: 0.8rem;
+}
+.flex_container .concert_paris {
+  background: url(./img/paris.jpg) no-repeat center/cover;
+}
+.flex_container .concert_london {
+  background: url(./img/london.jpg) no-repeat center/cover;
 }
 
 /*# sourceMappingURL=index.css.map */

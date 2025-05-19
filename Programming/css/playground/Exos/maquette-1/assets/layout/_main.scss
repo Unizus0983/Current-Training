@@ -1,0 +1,98 @@
+main {
+    background-color: $grey;
+}
+
+// ****************première section
+.grid_container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    gap: 10px;
+    .left_part {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left_part .text_gold {
+    padding-left: 50px;
+    position: relative;
+}
+
+.left_part .text_gold::before {
+    content: '';
+    height: 100px;
+    width: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $color-primary;
+}
+
+.right_part {
+    background: url(./img/london_hall.jpg) no-repeat center/cover;
+    position: relative;
+    margin-top: 70px;
+}
+
+.right_part .rectangular {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+}
+}
+
+
+
+//*******************section 2 
+.flex_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 29px;
+    
+
+    .concert {
+        height: 400px;
+        padding: 30px 30px;
+    }
+
+    .concert_twelve {
+        max-width: 38%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+        padding-top: 0;
+        img{
+            max-width: 150px;
+            height: 150px;
+        }
+    }
+
+    .concert_london,
+    .concert_paris {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 291px;
+        .date{
+            padding: $btn-padding;
+            background-color: $color-rgba;
+            max-width: 100px;
+            font-size: 0.8rem;
+        }
+     
+
+
+    }
+
+    .concert_paris {
+        background: url(./img/paris.jpg)no-repeat center/cover;
+
+    }
+
+    .concert_london {
+        background: url(./img/london.jpg)no-repeat center/cover;
+
+    }
+}

@@ -1,0 +1,38 @@
+.btn{
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    background-color: $color-primary;
+    padding: $btn-padding;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.round i {
+    margin-left: 0.4rem;
+}
+.round{
+   border-radius: 20px;
+   text-align: center;
+
+}
+.round:hover,
+.rectangular:hover{
+    color: $color-primary;
+    background-color: $white;
+}
+.rectangular{
+    width: fit-content;
+}
+
+
+
+/*****************social-icon**************/
+.social_icons i{
+    color: $white;
+    padding: 0.5rem;
+    border: 1px solid $white;
+}
+.social_icons i:hover{
+    color: $color-primary;
+    border-color: $color-primary;
+}
