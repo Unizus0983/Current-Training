@@ -8,7 +8,9 @@ html {
 //----color
 $color-primary: #cca57c;
 $color-secondary: #272727;
-$color-rgba: #272727b2;
+
+
+$color-rgba: rgba(39, 39, 39, 0.733);
 $white: #fff;
 $grey: #606060;
 
@@ -16,6 +18,14 @@ $font-primary: 'Roboto', sans-serif;
 $font-secondary: 'Roboto+Condensed', sans-serif;
 
 $btn-padding: 0.8rem 0.8rem;
+
+$space1:30px;
+$space2:20px;
+$space3:40px;
+
+$space-card:$space1 $space1;
+
+
 
 $line-height-s: 1;
 $line-height-m: 1.5;
@@ -53,10 +63,12 @@ p {
 .container {
   max-width: 1168px;
   margin: 0 auto;
-  padding: 30px 30px;
+ padding: calc(#{$space1} * 2);
 }
 .section_container {
-  padding: 40px 30px;
+  max-width: 1072px;
+  padding: calc(#{$space2} * 2) $space2 ;
+  height: fit-content;
 }
 .brown {
   color: $white;
@@ -95,3 +107,4 @@ p {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
+

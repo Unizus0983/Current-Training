@@ -12,36 +12,58 @@ header {
 
   //***********************NAV*********************
 
-  .header_nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-  }
-
-  .header-logo {
-    align-items: flex-start;
-  }
+  // .header_nav {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   gap: 50px;
+  // }
 }
+
 
 .container_links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  gap: 150px;
+  gap: 40px;
   text-transform: uppercase;
+  max-height: 70px;
+  padding: 0;
 
   .link_nav {
     height: 100%;
     padding: 0.7rem 0.5rem;
     transition: 0.2s;
+    flex: 1;
+  }
+  .link_logo {
+    flex: 0 0 300px;
+  }
+  &:hover .link:not(:hover){
+    color: $white;
+    &::after{
+      opacity: 0;
+    }
   }
 }
+.header-logo{
+  background: url(./img/logo_header.png) no-repeat center/cover;
+  width: 300px;
+  height: 70px;
+  &:hover{
+     background-image: url(./img/logo_hover.png);
+  
+  }
+  
+
+}
+
 
 .link {
   color: $white;
   transition: all 0.3s ease;
   position: relative;
+  text-align: center;
 
   &:hover {
     color: $color-primary;
@@ -54,7 +76,7 @@ header {
     width: 0%;
     background: $color-primary;
     opacity: 0;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
   }
 
   &:hover::after {
@@ -72,7 +94,7 @@ header {
     width: 100%;
     background: $color-primary;
     opacity: 1;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
   }
 }
 

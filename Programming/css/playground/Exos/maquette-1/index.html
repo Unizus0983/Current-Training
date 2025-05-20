@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -14,21 +14,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
     <header>
         <div class="header_nav ">
             <nav>
-                <ul class="container_links">
+                <ul class="container container_links">
                     <li class="link_nav "><a class="link active" href="#">home</a></li>
                     <li class="link_nav"><a class="link" href="#">about</a></li>
-                </ul>
-            </nav>
-            <div class="header-logo"><img src="./assets/img/logo_header.png" alt="" class="logo"></div>
-            <nav>
-                <ul class="container_links">
+
+                    <li class="link_nav link_logo"><a class="header-logo" href="#"></a>
+                    </li>
+
                     <li class="link_nav"><a class="link" href="#">projects</a></li>
                     <li class="link_nav"><a class="link" href="#">contacts</a></li>
                 </ul>
@@ -77,6 +76,7 @@
                         laboriosam!</p>
                 </div>
                 <div class="right_part">
+                    <div class="bg_hall"></div>
                     <a class="btn rectangular " href="#">look more<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -87,12 +87,12 @@
         <section class="gold container">
             <h2>about <span class="text_brown">projets</span></h2>
             <div class="flex_container section_container">
-                <div class="concert_paris concert">
+                <div class="concert_paris card">
                     <h3>concert hall in <span class="text_gold">paris</span></h3>
                     <p class="date">janvier 2017</p>
 
                 </div>
-                <div class="concert_london concert">
+                <div class="concert_london card">
                     <h3>concert hall in <span class="text_gold">London</span></h3>
                     <p class="date">mars 2017</p>
 
@@ -113,28 +113,34 @@
         <section class="brown container">
             <h2>about <span class="text_gold">services</span></h2>
             <div class="flex_container section_container">
-                <div class="service concert">
-                    <img src="./assets/img/poly-logo.png" alt="">
+                <div class="card service concert">
+                    <img class="logo-section3" src="./assets/img/poly-logo.png" alt="log poly-logo">
                     <h4>development</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores explicabo consectetur eius nam
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores explicabo consectetur eius
+                        nam
                         tempora? Repellat non corporis sed voluptatibus blanditiis itaque maiores nihil facilis
-                        temporibus cum, quisquam nesciunt, voluptate eveniet at reiciendis quaerat soluta, quae nobis.
+                        temporibus cum, quisquam nesciunt, voluptate eveniet at reiciendis quaerat soluta, quae
+                        nobis.
                         Minima modi aliquid exercitationem?</p>
-                    <a href="#" class="btn spacial"></a>
-
+                    <a href="#" class="btn spacial"><span class="btn-text">more</span></a>
                 </div>
-                <div class="service concert">
-                    <img src="./assets/img/3d-logo.png" alt="">
+                <div class="card service ">
+                    <img class="logo-section3" src="./assets/img/3d-logo.png" alt="">
                     <h4>plan works</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores explicabo consectetur eius nam
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores explicabo consectetur eius
+                        nam
                         tempora? Repellat non corporis sed voluptatibus blanditiis itaque maiores nihil facilis
-                        temporibus cum, quisquam nesciunt, voluptate eveniet at reiciendis quaerat soluta, quae nobis.
+                        temporibus cum, quisquam nesciunt, voluptate eveniet at reiciendis quaerat soluta, quae
+                        nobis.
                     </p>
-                    <a href="#" class="btn spacial"></a>
+                    <a href="#" class="btn spacial"><span class="btn-text">more</span></a>
 
                 </div>
-                <div class="service concert">
-                    <img src="./assets/img/map.png" alt="">
+                <div class="service concert_twelve map">
+                    <div class="visual_map">
+
+                    </div>
+
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores explicabo consectetur eius nam
                         tempora? Repellat non corporis sed voluptatibus blanditiis itaque maiores nihil facilis
@@ -146,7 +152,27 @@
             </div>
 
         </section>
+
     </main>
+    <footer>
+        <div class="footer_container section_container">
+            <div class="card_footer  gold">
+                <h3>request a call back</h3>
+            </div>
+
+            <form class=" card_footer  brown">
+                <input class="brown" type="text" name="first_name" id="name" placeholder="name*">
+                <input class="brown" type="email" name="mail" id="email" placeholder="E-Mail*">
+                <textarea class="brown" name="mess" id="message" cols="30" rows="10" placeholder="message*"></textarea>
+                <input class="btn btn-form" type="submit" value="Envoyer">
+
+
+            </form>
+
+
+        </div>
+
+    </footer>
 
 </body>
 

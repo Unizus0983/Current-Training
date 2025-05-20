@@ -117,11 +117,15 @@ p {
 .container {
   max-width: 1168px;
   margin: 0 auto;
-  padding: 30px 30px;
+  padding: calc(30px * 2);
 }
 
 .section_container {
-  padding: 40px 30px;
+  max-width: 1072px;
+  padding: calc(20px * 2) 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .brown {
@@ -194,6 +198,65 @@ p {
   width: fit-content;
 }
 
+/*****************spacial button*************/
+.btn.spacial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  color: #cca57c;
+  background: #606060;
+  max-width: 146px;
+  height: 52px;
+  border-left: 5px solid #cca57c;
+  position: relative;
+  overflow: hidden;
+}
+.btn.spacial::before {
+  content: "";
+  width: 146px;
+  height: 52px;
+  background-color: #cca57c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateX(-146px);
+          transform: translateX(-146px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+}
+.btn.spacial:hover {
+  color: #272727;
+  z-index: 100;
+}
+.btn.spacial:hover::before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+.btn.spacial .btn-text {
+  z-index: 1;
+}
+
+.btn-form {
+  color: #fff;
+  border-radius: 12px;
+  max-width: 100px;
+}
+.btn-form:hover {
+  color: #cca57c;
+  background: #fff;
+}
+
 /*****************social-icon**************/
 .social_icons i {
   color: #fff;
@@ -217,7 +280,8 @@ header {
   font-size: 1rem;
   position: relative;
 }
-header .header_nav {
+
+.container_links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,32 +291,39 @@ header .header_nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 50px;
-}
-header .header-logo {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.container_links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 150px;
+  gap: 40px;
   text-transform: uppercase;
+  max-height: 70px;
+  padding: 0;
 }
 .container_links .link_nav {
   height: 100%;
   padding: 0.7rem 0.5rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.container_links .link_logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
+}
+.container_links:hover .link:not(:hover) {
+  color: #fff;
+}
+.container_links:hover .link:not(:hover)::after {
+  opacity: 0;
+}
+
+.header-logo {
+  background: url(./img/logo_header.png) no-repeat center/cover;
+  width: 300px;
+  height: 70px;
+}
+.header-logo:hover {
+  background-image: url(./img/logo_hover.png);
 }
 
 .link {
@@ -260,6 +331,7 @@ header .header-logo {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
+  text-align: center;
 }
 .link:hover {
   color: #cca57c;
@@ -271,7 +343,7 @@ header .header-logo {
   width: 0%;
   background: #cca57c;
   opacity: 0;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
 }
 .link:hover::after {
   -webkit-animation-name: effectLine;
@@ -294,7 +366,7 @@ header .header-logo {
   width: 100%;
   background: #cca57c;
   opacity: 1;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
 }
 
 .hearder_content {
@@ -356,7 +428,7 @@ main {
 .grid_container {
   display: grid;
   grid-template-columns: 75% 25%;
-  gap: 10px;
+  gap: 30px;
 }
 .grid_container .left_part {
   display: -webkit-box;
@@ -364,7 +436,7 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 .grid_container .left_part .text_gold {
   padding-left: 50px;
@@ -380,14 +452,19 @@ main {
   background-color: #cca57c;
 }
 .grid_container .right_part {
-  background: url(./img/london_hall.jpg) no-repeat center/cover;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   position: relative;
-  margin-top: 70px;
+}
+.grid_container .right_part .bg_hall {
+  width: 220px;
+  height: 340px;
+  background: url(./img/london_hall.jpg) no-repeat center/cover;
 }
 .grid_container .right_part .rectangular {
   position: absolute;
   bottom: -20px;
-  left: 20px;
+  left: 40px;
 }
 
 .flex_container {
@@ -397,14 +474,39 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 29px;
+  gap: 30px;
 }
-.flex_container .concert {
-  height: 400px;
+.flex_container .card {
+  min-height: 434px;
   padding: 30px 30px;
 }
+.flex_container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 291px;
+}
+.flex_container .card .date {
+  padding: 0.8rem 0.8rem;
+  background-color: rgba(39, 39, 39, 0.733);
+  max-width: 100px;
+  font-size: 0.8rem;
+}
+.flex_container .concert_paris {
+  background: url(./img/paris.jpg) no-repeat center/cover;
+}
+.flex_container .concert_london {
+  background: url(./img/london.jpg) no-repeat center/cover;
+}
 .flex_container .concert_twelve {
-  max-width: 38%;
+  max-width: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,15 +520,85 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  gap: 20px;
+  gap: 30px;
   padding-top: 0;
 }
 .flex_container .concert_twelve img {
-  max-width: 150px;
+  min-width: 150px;
   height: 150px;
 }
-.flex_container .concert_london,
-.flex_container .concert_paris {
+
+.card.service {
+  gap: 30px;
+  padding-left: 0;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.spacial {
+  margin-top: auto;
+}
+
+.logo-section3:nth-child(1) {
+  max-width: 109px;
+  aspect-ratio: 4/3;
+}
+
+.logo-section3:nth-child(2) {
+  max-width: 109px;
+  aspect-ratio: 4/3;
+}
+
+.concert_twelve.map {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 30px;
+}
+
+.visual_map {
+  background: url(./img/map.png) no-repeat center/contain;
+  min-width: 387px;
+  min-height: 200px;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.visual_map::before, .visual_map::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #cca57c;
+  position: absolute;
+}
+.visual_map::before {
+  top: -20px;
+  left: 0;
+}
+.visual_map::after {
+  bottom: -20px;
+  left: 0;
+}
+
+footer {
+  background: url(./img/bg_footer.jpg) no-repeat center/cover;
+  padding: 60px 0;
+}
+footer .footer_container {
+  max-width: 750px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer .card_footer {
+  min-width: 375px;
+  min-height: 375px;
+  opacity: 0.9;
+  padding: 30px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,23 +606,38 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 291px;
+  gap: 30px;
 }
-.flex_container .concert_london .date,
-.flex_container .concert_paris .date {
-  padding: 0.8rem 0.8rem;
-  background-color: rgba(39, 39, 39, 0.6980392157);
-  max-width: 100px;
-  font-size: 0.8rem;
+footer .card_footer input,
+footer .card_footer textarea {
+  outline: none;
+  border-bottom: 1px solid #fff;
+  width: 100%;
 }
-.flex_container .concert_paris {
-  background: url(./img/paris.jpg) no-repeat center/cover;
+footer .card_footer input[type=submit] {
+  border: none;
 }
-.flex_container .concert_london {
-  background: url(./img/london.jpg) no-repeat center/cover;
+footer .card_footer input::-webkit-input-placeholder, footer .card_footer textarea::-webkit-input-placeholder {
+  color: #fff;
+  text-transform: capitalize;
 }
-
-/*# sourceMappingURL=index.css.map */
+footer .card_footer input::-moz-placeholder, footer .card_footer textarea::-moz-placeholder {
+  color: #fff;
+  text-transform: capitalize;
+}
+footer .card_footer input:-ms-input-placeholder, footer .card_footer textarea:-ms-input-placeholder {
+  color: #fff;
+  text-transform: capitalize;
+}
+footer .card_footer input::-ms-input-placeholder, footer .card_footer textarea::-ms-input-placeholder {
+  color: #fff;
+  text-transform: capitalize;
+}
+footer .card_footer input::placeholder,
+footer .card_footer textarea::placeholder {
+  color: #fff;
+  text-transform: capitalize;
+}
+footer .card_footer textarea {
+  resize: none;
+}/*# sourceMappingURL=index.css.map */
