@@ -1,0 +1,16 @@
+.btn {
+  font-family: $font-primary;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $grey;
+  color: $white;
+  padding: $btn-padding;
+  font-size: $font-sizeS;
+  transition: background-color 0.3s ease;
+  &:hover{
+    background-color: $green-rgba;
+  }
+  
+  
+}
+

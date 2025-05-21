@@ -1,0 +1,125 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .header_banner {
+    padding: $padXL;
+    background: url(./img/bg_header.jpg) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      text-align: center;
+      color: rgba($color-primary, 0.5);
+      display: none;
+    }
+    .fa-burger {
+      color: $color-primary;
+      flex: none;
+      position: absolute;
+      top: $spaceL;
+      right: $spaceL;
+    }
+  }
+  .header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary;
+    padding: $padL;
+    nav {
+      position: relative;
+    }
+
+    .container_links {
+      display: flex;
+      gap: $spaceM;
+      align-items: center;
+      justify-content: center;
+
+      .link_nav {
+        width: 100%;
+        color: $grey;
+        font-size: $font-sizeXS;
+        text-transform: uppercase;
+        padding: $btn-padding;
+      }
+    }
+    .sidebar_links {
+     
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+      width: 300px;
+      z-index: 999;
+      background-color: rgba($color-primary, 0.6);
+      backdrop-filter: blur(10px);
+      box-shadow: 6px 0px 10px rgba($color-secondary, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: $padXL;
+      // transform: translateX(-500px);
+
+
+      .fa-xmark{
+        
+        position: absolute;
+        color: $grey;
+        top: $spaceL;
+        right: $spaceM;
+      }
+      
+
+      .link_nav {
+        width: 100%;
+        font-size: $font-sizeM;
+        transition: all 0.3s;
+        &:hover {
+          background-color: rgba($color-secondary, 0.6);
+        }
+      }
+      .link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.header_search {
+  display: flex;
+  align-items: center;
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $grey;
+    color: $white;
+    padding: $padS;
+    width: 44px;
+    height: 44px;
+    border: 1px solid $grey;
+  }
+  input[type='search'] {
+    background-color: $color-primary;
+    border: 1px solid $grey;
+    padding: $padS;
+    height: 44px;
+    &:focus {
+      background-color: $grey-rgba;
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    &::placeholder {
+      font-size: $font-sizeXS;
+      text-transform: uppercase;
+    }
+  }
+}
