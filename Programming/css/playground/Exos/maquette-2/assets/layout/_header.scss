@@ -1,14 +1,12 @@
 header {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: fit-content;
   width: 100%;
   .header_banner {
     padding: $padXL;
     background: url(./img/bg_header.jpg) no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include alignChild;
     h1 {
       text-align: center;
       color: rgba($color-primary, 0.5);
@@ -40,10 +38,9 @@ header {
     }
 
     .container_links {
-      display: flex;
+      @include alignChild;
       gap: $spaceM;
-      align-items: center;
-      justify-content: center;
+      
       
       }
       .container_links.desktop_links{
@@ -66,15 +63,14 @@ header {
       bottom: 0;
       left: 0;
       height: 100vh;
-      width: 300px;
+      width: 375px;
       z-index: 999;
       background-color: rgba($color-primary, 0.6);
       backdrop-filter: blur(10px);
       box-shadow: 6px 0px 10px rgba($color-secondary, 0.3);
-      display: flex;
+      @include alignChild;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+     
       gap: $padXL;
       transform: translateX(-500px);
       transition: 0.8s ease;
@@ -95,7 +91,7 @@ header {
         width: 100%;
         height: 60px;
         color: $grey;
-        padding: $btn-padding;
+        padding: $btn-paddingM;
         font-size: $font-sizeM;
         text-transform: uppercase;
         transition: all 0.3s;
@@ -115,8 +111,7 @@ header {
 // search bar
 
 .header_search {
-  display: flex;
-  align-items: center;
+  @include alignChild;
   
   label {
     display: flex;
