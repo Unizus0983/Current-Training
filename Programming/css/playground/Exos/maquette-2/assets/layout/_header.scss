@@ -54,6 +54,12 @@ header {
         font-size: $font-sizeXS;
         text-transform: uppercase;
         padding: $btn-padding;
+        .active{
+          color: $hover;
+        }
+        &:hover{
+          color: $hover;
+        }
       }
     }
     .sidebar_links {
@@ -98,11 +104,16 @@ header {
         
         &:hover {
           background-color: rgba($color-secondary, 0.6);
+          color: $hover;
         }
       }
       .link {
         width: 100%;
         text-align: center;
+        
+      }
+      .active{
+        color: $hover;
       }
     }
   }

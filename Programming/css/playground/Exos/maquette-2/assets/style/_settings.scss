@@ -12,6 +12,7 @@ $color-secondary:#C2C57E;
 $black: #272727;
 $white: #fff;
 $grey: #606060;
+$hover:#ff002b;
 
 
 $black-rgba: rgba($black, 0.8);
@@ -55,6 +56,9 @@ $line-height-S: 1;
 $line-height-M: 1.6;
 $line-height-L: 2;
 
+$widthS:300px;
+$widthM:620px;
+
 //****title
 h1,
 h2,h3,h4 {
@@ -67,6 +71,7 @@ h2,h3,h4 {
 }
 h2{
   color: $color-primary;
+  width: 100%;
   
   
 }
@@ -87,6 +92,9 @@ p {
  
   margin: 0 auto 32px; 
 }
+.small{
+  max-width: $widthS;
+}
 
 
 .green,
@@ -98,10 +106,7 @@ p {
 
   background-color: $color-secondary;
 }
-.gold {
-  background-color: $color-primary;
- 
-}
+
 .light {
   color: $grey;
   text-transform: uppercase;
