@@ -124,6 +124,7 @@ main {
     @include alignChild;
     gap: $spaceS;
     i {
+     cursor: pointer;
       font-size: $font-sizeXS;
       color: $white;
       // padding: 0.8rem;
@@ -132,6 +133,12 @@ main {
       background-color: $black;
       text-align: center;
       @include alignChild;
+      transition: all 0.3s ease;
+      &:hover{
+        color: $hover;
+        background-color: $color-secondary;
+        transform: scale(1.4)
+      }
     }
   }
 }
@@ -159,6 +166,9 @@ main {
         display: inline-block;
         
         
+      }
+      &:hover{
+        color: $hover;
       }
      
    
