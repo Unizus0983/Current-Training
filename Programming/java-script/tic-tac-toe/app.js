@@ -50,7 +50,7 @@ let combo;
 cells.forEach((cell) => {
   cell.addEventListener('click', () => {
     const index = cell.getAttribute('data-index');
-    console.log('cas cliquée ! index :', index);
+    // console.log('cas cliquée ! index :', index);
 
     //comptage des clics
     if (counterHandleClick == 9 || winner == true) {
@@ -145,6 +145,7 @@ cells.forEach((cell) => {
         'var(--color2)';
       document.querySelector('[data-index="7"]').style.backgroundColor =
         'var(--color2)';
+      counterPoint();
     }
 
     //6émeligne----------------------
@@ -197,10 +198,12 @@ cells.forEach((cell) => {
     }
 
     //changement de joueur
-    if (currentPlayer === 'X') {
-      currentPlayer = 'Y';
-    } else {
-      currentPlayer = 'X';
+    if (winner === false) {
+      if (currentPlayer === 'X') {
+        currentPlayer = 'Y';
+      } else {
+        currentPlayer = 'X';
+      }
     }
   }); //fin 1er if
 }); //fin 1er if
