@@ -203,7 +203,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo "<p class='green'>Auteur enregistré : $firstName $lastName (Né le $birthDate)</p>";
             // réinitialisation de la page
-            echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+            header("Location: index.php?updated=1");
             exit;
         }
     }
@@ -232,7 +232,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<p class='green'>Style enregistré : " . htmlspecialchars($otherType) . "</p>";
         //réinitialisationde la page
-        echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+        header("Location: index.php?updated=1");
         exit;
     }
     ?>
@@ -311,7 +311,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ]);
             echo "<p class= 'green'>Le livre a bien étè enregistré !</p>";
             //reinitiialisation de la page
-            echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+            header("Location: index.php?updated=1");
             exit;
         }
 
@@ -357,7 +357,8 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmtDelete->execute([':idDelete' => $_POST['id_book']]);
 
         echo "<p class='green'>Le livre a bien été supprimé.</p>";
-        echo "<script>location.reload();</script>";
+        //echo "<script>location.reload();</script>";
+        //réintinitialisation de la page
         header("Location: index.php?updated=1");
         exit;
     }
@@ -393,7 +394,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<p class='green'>Le titre a bien été modifié.</p>";
         //réinitialisation de la page
-        echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+        header("Location: index.php?updated=1");
         exit;
     }
     ?>
@@ -441,7 +442,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo "<p class='green'>✅ Emprunt enregistré avec succès.</p>";
             //réinitialisation de la page
-            echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+            header("Location: index.php?updated=1");
             exit;
         }
 
@@ -532,7 +533,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<p class='green'>✅ Livre restitué avec succès.</p>";
 
         // Redirection pour rafraîchir la liste
-        echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+        header("Location: index.php?updated=1");
         exit;
     }
     ?>
@@ -589,7 +590,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ]);
             echo "<p class='green'>✅ Adhérent enregistré avec succès.</p>";
             //réinitialisation de la page
-            echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+            header("Location: index.php?updated=1");
             exit;
         } else {
             // ❌ Affiche l’erreur seulement si formulaire soumis et incomplet
@@ -655,7 +656,8 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $stmtDel = $pdo->prepare($sqlDelete);
             $stmtDel->execute([':idUser' => $idUser]);
             echo "<p class='green'>✅ Adhérent supprimé avec succès.</p>";
-            echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+            //réinitialisation de la page
+            header("Location: index.php?updated=1");
             exit;
         }
     }

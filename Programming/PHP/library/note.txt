@@ -1,0 +1,138 @@
+<?php
+$host = 'localhost';
+$dbname = 'library';
+$user = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    // Active les erreurs PDO en exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connexion réussie !";
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie</title>
+    <style>
+        body {
+            font-size: 1.5rem;
+            padding: 150px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 50vw;
+            margin: 0 auto;
+            padding: 3rem;
+            background-color: #50ddd6ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input,
+        select {
+            height: 40px;
+            width: 30vw;
+            cursor: pointer;
+            border-radius: 12px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #dispo {
+            color: red;
+        }
+
+        .connect {
+            border-radius: 12px;
+            padding: 0.5rem 0.8rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Livres en location</h1>
+    <form>
+        <label for='bookSelect'>Choisir un livre par titre</label>
+        <select name='titleBook' id='bookSelect'>
+            <?php
+            $sqlBook = "SELECT book.id_book, title, publication_date, disponible, 
+                    first_name_author, name_author 
+                    FROM book 
+                    INNER JOIN author ON book.id_author = author.id_author";
+            $stmtBook = $pdo->prepare($sqlBook);
+            $stmtBook->execute();
+            $resultsBook = $stmtBook->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($resultsBook as $book) {
+
+                $dispoText = ($book['disponible'] == 1) ? "" : "Indisponible";
+                echo "<option value='" . htmlspecialchars($book['id_book']) . "' 
+                  data-dispo='" . $book['disponible'] . "'>
+                  " . htmlspecialchars($book['title']) . " : 
+                  " . htmlspecialchars($book['first_name_author']) . " "
+                    . htmlspecialchars($book['name_author']) . " ("
+                    . htmlspecialchars($book['publication_date']) . ") - "
+                    . $dispoText . "</option>";
+            }
+            ?>
+        </select>
+        <label for='dispoBook'>Livres disponibles</label>
+        <select name='dispoBookTrue' id='dispoBook'>
+            <?php
+            foreach ($resultsBook as $book) {
+                if (($book['disponible'] == 1)) {
+                    echo "<option value='" . htmlspecialchars($book['id_book']) . "' 
+                  data-dispo='1'>
+                  " . htmlspecialchars($book['title']) . " : " .
+                        htmlspecialchars($book['first_name_author']) . " " .
+                        htmlspecialchars($book['name_author']) . " (" .
+                        htmlspecialchars($book['publication_date']) . ") 
+                </option>"; # code...
+                }
+                # code...
+            }
+
+            ?>
+
+
+        </select>
+        <label for='typeBook'>Genres littéraires</label>
+
+        <select name="choiceType" id="typeBook">
+            <?php
+            $sqlType = "SELECT book.id_book, book.title, type.name_type 
+                FROM `book` 
+                INNER JOIN `type` ON book.id_type = type.id_type";
+            $stmtType = $pdo->prepare($sqlType);
+            $stmtType->execute();
+            $resultsType = $stmtType->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($resultsType as $bookType) {
+                echo "<option value='" . htmlspecialchars($bookType['id_book']) . "'>
+                " . htmlspecialchars($bookType['title']) . " : " . htmlspecialchars($bookType['name_type']) . "
+              </option>";
+            }
+            ?>
+        </select>
+
+
+
+
+    </form>
+
+
+</body>
+
+</html>
