@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test mot de passe : méthode REGEXP</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 10%;
+            height: 100vh;
+        }
+        h1{
+            text-align: center;
+        }
+        .formulaire{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+          
+            gap: 20px;
+            border: 1px solid green;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+
+        }
+        div label{
+            text-align: left;
+        }
+        input{
+            min-width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>🔐Saisir son mot de passe </h1>
+    <form class="formulaire" action="#" method="post"
+    >
+    <div>  <label for="email">Votre mail</label>
+    <input type="email" name="email" id="email" required></div>
+  
+<div>    <label for="keyPassword">Votre mot de passe </label>
+ 
+<input type="password" name="password" id="keyPassword"
+       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" minlength="8"
+       title="Doit contenir au moins une minuscule, une majuscule, un chiffre, et 8 caractères minimum."
+       required></div>
+    <div id="passwordError" style="color: red; display: none;">
+        Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.
+    </div>
+    <div id="passwordSuccess" style="color: rgb(0, 255, 42); display: none;">
+       ✔ Mot de passe correcte 
+    </div>
+
+<button type="submit" id="passwordForm">Validez</button>
+
+</form>
+    <script src="/test.js"></script>
+</body>
+</html>
