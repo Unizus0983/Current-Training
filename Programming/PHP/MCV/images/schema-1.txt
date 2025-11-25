@@ -1,0 +1,45 @@
+→ = "appelle" ou "inclut"
+
+↓ = "passe à l'étape suivante"
+
+↔ = "échange des données"
+
+
+
+
+
+┌─────────────────┐
+│   index.php     │ ← (Point d'entrée)
+└─────────┬───────┘
+          │
+          ├─────────┐
+          │         │
+          ▼         ▼
+┌─────────────┐ ┌─────────────────┐
+│ models/     │ │ controllers/    │
+│ connect.php │ │ bonjour.php ────┼──┐
+└──────┬──────┘ │ aurevoir.php ───┼─┐│
+       │        └─────────────────┘ ││
+       │              │             ││
+       │              ▼             ▼│
+       │        ┌─────────────┐ ┌─────────────┐
+       └───────►│   view/     │ │   view/     │
+                │ bonjour.php │ │ aurevoir.php│
+                └─────────────┘ └─────────────┘
+
+VISITEUR clique "Bonjour"
+         │
+         ▼
+index.php?page=bonjour
+         │
+         ▼
+index.php appelle → controllers/bonjour.php
+                           │
+                           ▼
+          controllers/bonjour.php → models/connect.php (données)
+                           │
+                           ▼
+          controllers/bonjour.php → view/bonjour.php (affichage)
+                           │
+                           ▼
+                HTML "Bonjour [Nom] !"                
